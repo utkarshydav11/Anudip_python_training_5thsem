@@ -1,0 +1,18 @@
+import random 
+#Gives us a random number 
+secret = random.randint(1,50)
+#Initializes attempt
+attempts = 0
+
+while True:
+    guess = int(input("Enter your guess:"))
+    attempts +=1
+    
+    if guess > secret:
+        print("Too High")
+    elif guess < secret:
+        print("Too Low")
+    else:
+        print("Correct Guess")
+        break
+    print("Total attempts=", attempts)
