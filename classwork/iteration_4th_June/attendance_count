@@ -1,0 +1,7 @@
+#Program for attendance
+attendance = 0
+print("Student Entered")
+
+while attendance < 30:
+    attendance = attendance+1
+    print("Attendance count =", attendance
