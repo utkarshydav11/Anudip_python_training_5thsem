@@ -1,0 +1,5 @@
+#Program for Water level
+water = 0
+while water < 100:
+    water = water+10
+    print("Water level =", water)
