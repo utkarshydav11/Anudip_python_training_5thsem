@@ -1,0 +1,38 @@
+#Accept marks of subject
+#Enter the marks of 5 subjeckts
+English = float(input("Enter marks :"))
+Hindi = float(input("Enter marks :"))
+History = float(input("Enter marks :"))
+Geography = float(input("Enter marks :"))
+Maths = float(input("Enter marks :"))
+
+#Calculate the sum of 5 subjects
+total = English+Hindi+History+Geography+Maths
+#Calculate Percentage
+percentage = total/5
+
+#Count Failed subject
+failed = 0
+
+if English<40:
+    failed+=1
+if Hindi<40:
+    failed+=1
+if History<40:
+    failed+=1
+if Geography<40:
+    failed+=1
+if Maths<40:
+    failed+=1
+    
+#Determine grade
+if percentage >=90:
+    grade = "A+"
+if percentage >=75:
+    grade = "A"
+if percentage >=60:
+    grade = "B"
+if percentage >=40:
+    grade = "C"
+else:
+    grade = "Fail"
