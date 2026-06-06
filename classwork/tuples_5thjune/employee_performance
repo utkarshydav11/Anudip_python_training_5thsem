@@ -1,0 +1,57 @@
+employees = (
+    ("E101", "Anuj", 92),
+    ("E102", "Rahul", 76),
+    ("E103", "Priya", 58),
+    ("E104", "Neha", 88),
+    ("E105", "Amit", 45)
+)
+
+# 1. Employees scoring 80 or above
+print("Employees scoring 80 or above:")
+for emp_id, name, score in employees:
+    if score >= 80:
+        print(emp_id, name, score)
+
+# 2. Count employees needing improvement
+count = 0
+for emp_id, name, score in employees:
+    if score < 60:
+        count += 1
+
+print("\nEmployees needing improvement:", count)
+
+# 3. Employee with highest score
+highest = employees[0]
+
+for emp in employees:
+    if emp[2] > highest[2]:
+        highest = emp
+
+print("\nHighest Scorer:")
+print("ID:", highest[0])
+print("Name:", highest[1])
+print("Score:", highest[2])
+
+# 4. List of names scoring above 75
+high_performers = []
+
+for emp_id, name, score in employees:
+    if score > 75:
+        high_performers.append(name)
+
+print("\nEmployees scoring above 75:")
+print(high_performers)
+
+# 5. Performance category
+print("\nPerformance Categories:")
+for emp_id, name, score in employees:
+    if score >= 90:
+        category = "Excellent"
+    elif score >= 75:
+        category = "Good"
+    elif score >= 60:
+        category = "Average"
+    else:
+        category = "Needs Improvement"
+
+    print(name, "->", category)
