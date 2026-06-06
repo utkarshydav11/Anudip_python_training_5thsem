@@ -1,0 +1,41 @@
+books = [
+    ("Python Basics", 5),
+    ("Data Science", 0),
+    ("Java Programming", 3),
+    ("Machine Learning", 0)
+]
+
+# Display unavailable books
+print("Unavailable Books:")
+for title, copies in books:
+    if copies == 0:
+        print(title)
+
+# Find books with more than 2 copies
+print("\nBooks with more than 2 copies:")
+for title, copies in books:
+    if copies > 2:
+        print(title, "-", copies)
+
+# Count available books
+available_count = 0
+
+for title, copies in books:
+    if copies > 0:
+        available_count += 1
+
+print("\nAvailable Books =", available_count)
+
+# Search for a requested book
+search_book = input("\nEnter book name to search: ")
+
+found = False
+
+for title, copies in books:
+    if title.lower() == search_book.lower():
+        print("Book Found:", title)
+        found = True
+        break
+
+if not found:
+    print("Book Not Found")
