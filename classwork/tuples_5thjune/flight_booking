@@ -1,0 +1,65 @@
+bookings = (
+    ("P101", "Delhi", "Confirmed"),
+    ("P102", "Mumbai", "Waiting"),
+    ("P103", "Delhi", "Confirmed"),
+    ("P104", "Chennai", "Cancelled"),
+    ("P105", "Mumbai", "Confirmed"),
+    ("P106", "Delhi", "Waiting")
+)
+
+# 1. Display Confirmed passengers
+print("Confirmed Passengers:")
+for pid, destination, status in bookings:
+    if status == "Confirmed":
+        print(pid, destination, status)
+
+# 2. Count passengers travelling to Delhi
+delhi_count = 0
+
+for pid, destination, status in bookings:
+    if destination == "Delhi":
+        delhi_count += 1
+
+print("\nPassengers travelling to Delhi:", delhi_count)
+
+# 3. Count booking statuses
+confirmed = 0
+waiting = 0
+cancelled = 0
+
+for pid, destination, status in bookings:
+    if status == "Confirmed":
+        confirmed += 1
+    elif status == "Waiting":
+        waiting += 1
+    elif status == "Cancelled":
+        cancelled += 1
+
+print("\nBooking Counts:")
+print("Confirmed =", confirmed)
+print("Waiting =", waiting)
+print("Cancelled =", cancelled)
+
+# 4. List of passenger IDs with Waiting status
+waiting_ids = []
+
+for pid, destination, status in bookings:
+    if status == "Waiting":
+        waiting_ids.append(pid)
+
+print("\nWaiting Passenger IDs:")
+print(waiting_ids)
+
+# 5. Destination with highest bookings
+destinations = {}
+
+for pid, destination, status in bookings:
+    if destination in destinations:
+        destinations[destination] += 1
+    else:
+        destinations[destination] = 1
+
+highest_destination = max(destinations, key=destinations.get)
+
+print("\nDestination with Highest Bookings:")
+print(highest_destination, "-", destinations[highest_destination], "bookings")
