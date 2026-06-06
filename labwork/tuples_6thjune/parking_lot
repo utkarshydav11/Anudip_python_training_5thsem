@@ -1,0 +1,32 @@
+slots = [1, 0, 1, 1, 0, 0, 1, 0]
+
+occupied = 0
+available = 0
+available_slots = []
+
+# Count occupied/available and store available slot numbers
+for i in range(len(slots)):
+    if slots[i] == 1:
+        occupied += 1
+    else:
+        available += 1
+        available_slots.append(i)
+
+print("Occupied Slots =", occupied)
+print("Available Slots =", available)
+
+# First available slot
+if available_slots:
+    print("First Available Slot =", available_slots[0])
+
+# Display all available slots
+print("All Available Slots =", available_slots)
+
+# Occupancy percentage
+occupancy = (occupied / len(slots)) * 100
+print("Occupancy Percentage =", occupancy, "%")
+
+if occupancy > 75:
+    print("Parking occupancy exceeds 75%")
+else:
+    print("Parking occupancy does not exceed 75%")
