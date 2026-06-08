@@ -1,0 +1,14 @@
+# WAP to input a sentence and count its characters without len()
+
+#Take sentence input from the user
+user_sentence = input("Enter a sentence: ")
+
+#Initialize a counter variable to zero
+character_count = 0
+
+#Iterate through each character in the sentence using a for loop
+for char in user_sentence:
+    character_count += 1
+
+#Display the total count
+print("Total number of characters present: {character_count}")
