@@ -1,0 +1,15 @@
+# Take input from user and convert to lowercase to ignore case
+sentence = input("Enter a sentence: ").lower()
+
+# Initialize a dictionary to store vowel frequencies
+vowel_counts = {'a': 0, 'e': 0, 'i': 0, 'o': 0, 'u': 0}
+
+# Count the vowels
+for char in sentence:
+    if char in vowel_counts:
+        vowel_counts[char] += 1
+
+# Display the results
+print("\nVowel frequencies:")
+for vowel, count in vowel_counts.items():
+    print(f"{vowel.upper()}: {count}")
